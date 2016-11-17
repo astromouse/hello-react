@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const SRC_DIR = path.resolve(__dirname, '../src');
@@ -18,6 +19,14 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Hello, React!',
+      template: require('html-webpack-template'),
+      inject: false,
+      appMountId: 'app',
+    }),
+  ],
 };
 
 module.exports = config;
