@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Hello, React!",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astromouse/hello-react.git"
+  },
   "scripts": {
     "dev": "webpack --config=config/webpack.js -d --watch",
     "build" : "webpack --config=config/webpack.js -p"
