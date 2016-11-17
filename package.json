@@ -8,7 +8,7 @@
     "url": "https://github.com/astromouse/hello-react.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config=config/webpack.js"
+    "start": "webpack-dev-server --config=config/webpack.js -d"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
@@ -18,16 +18,16 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
-  },
   "devDependencies": {
     "html-webpack-plugin": "^2.24.1",
     "html-webpack-template": "^5.4.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }
