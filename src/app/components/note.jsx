@@ -1,18 +1,24 @@
+import InlineEditable from './inline-editable.jsx';
 import React from 'react';
 
 class Note extends React.Component {
   render() {
     return (
       <div>
-        <span>{this.props.task}</span>
+        <InlineEditable
+          value={this.props.task}
+          onFinishEditing={this.editNote.bind(this)} />
         <button onClick={this.deleteNote.bind(this)}>x</button>
       </div>
     );
   }
 
+  editNote(task) {
+    this.props.editNote(this.props.id, task);
+  }
+
   deleteNote(e) {
-    e.stopPropagation();
-    this.props.deleteNote();
+    this.props.deleteNote(this.props.id);
   }
 }
 

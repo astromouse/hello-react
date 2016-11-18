@@ -9,8 +9,10 @@ class Notes extends React.Component {
           return (
             <li key={note.id}>
               <Note
+                id={note.id}
                 task={note.task}
-                deleteNote={() => this.props.deleteNote(note.id)} />
+                editNote={this.props.editNote}
+                deleteNote={this.props.deleteNote} />
             </li>
           );
         })}

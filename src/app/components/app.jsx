@@ -26,6 +26,7 @@ class App extends React.Component {
         <button onClick={this.addNote.bind(this)}>+</button>
         <Notes
           notes={this.state.notes}
+          editNote={this.editNote.bind(this)}
           deleteNote={this.deleteNote.bind(this)} />
       </div>
     );
@@ -42,11 +43,23 @@ class App extends React.Component {
     });
   }
 
-  deleteNote(noteId) {
+  editNote(id, task) {
+    let notes = this.state.notes;
+    notes.forEach(note => {
+      if (note.id === id) {
+        note.task = task;
+      }
+    });
+    this.setState({
+      notes: notes,
+    });
+  }
+
+  deleteNote(id) {
     let notes = this.state.notes;
     this.setState({
       notes: notes.filter(note => {
-        return note.id !== noteId;
+        return note.id !== id;
       }),
     });
   }
