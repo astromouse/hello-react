@@ -5,17 +5,28 @@ const SRC_DIR = path.resolve(__dirname, '../src');
 const DIST_DIR = path.resolve(__dirname, '../dist');
 
 const config = {
-  entry: `${SRC_DIR}/app/index.jsx`,
+  entry: {
+    app: `${SRC_DIR}/app/index.jsx`,
+    style: `${SRC_DIR}/app/main.css`,
+  },
   output: {
     path: DIST_DIR,
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   module: {
     loaders: [
       {
         loader: 'babel',
         include: SRC_DIR,
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
+      },
+      {
+        loaders: [
+          'style',
+          'css',
+        ],
+        include: SRC_DIR,
+        test: /\.css$/,
       },
     ],
   },

@@ -4,11 +4,13 @@ import React from 'react';
 class Note extends React.Component {
   render() {
     return (
-      <div>
+      <div className="note">
         <InlineEditable
           value={this.props.task}
           onFinishEditing={this.editNote.bind(this)} />
-        <button onClick={this.deleteNote.bind(this)}>x</button>
+        <button className="delete-note" onClick={this.deleteNote.bind(this)}>
+          x
+        </button>
       </div>
     );
   }

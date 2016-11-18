@@ -12,7 +12,9 @@ class InlineEditable extends React.Component {
   render() {
     if (!this.state.isEditing) {
       return (
-        <span onClick={this.startEditing.bind(this)}>
+        <span
+          className="inline-editable displaying"
+          onClick={this.startEditing.bind(this)}>
           {this.props.value}
         </span>
       );
@@ -20,6 +22,7 @@ class InlineEditable extends React.Component {
 
     return (
       <input
+        className="inline-editable editing"
         type="text"
         defaultValue={this.props.value}
         autoFocus="true"

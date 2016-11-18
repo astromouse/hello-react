@@ -4,7 +4,7 @@ import React from 'react';
 class Notes extends React.Component {
   render() {
     return (
-      <ul>
+      <ul className="notes">
         {this.props.notes.map(note => {
           return (
             <li key={note.id}>

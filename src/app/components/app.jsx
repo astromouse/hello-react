@@ -23,7 +23,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.addNote.bind(this)}>+</button>
+        <button className="add-note" onClick={this.addNote.bind(this)}>
+          +
+        </button>
         <Notes
           notes={this.state.notes}
           editNote={this.editNote.bind(this)}
